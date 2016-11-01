@@ -8,38 +8,35 @@
 
 #import <Foundation/Foundation.h>
 #import "AdditionQuestion.h"
+#import "InputHandler.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         BOOL quit = NO;
         while (quit == NO) {
-            AdditionQuestion * newQuestion = [[AdditionQuestion alloc] init];
-            NSLog(@"%@", newQuestion.question);
+            //Ask the question
+                AdditionQuestion * newQuestion = [[AdditionQuestion alloc] init];
+                NSLog(@"%@", newQuestion.question);
             
+            //Get the answer
+                NSLog(@"What is the answer? ");
+                InputHandler *userInput = [[InputHandler alloc] init];
+                NSString * answer = [userInput getUserAnswer];
             
+            //Quit command
+                if ([answer  isEqual: @"quit"]) {
+                    NSLog(@"Thank you for playing.");
+                    break;
+                }
             
-            
-            NSLog(@"What is the answer? ");
-            char str [255];
-            fgets(str, 255, stdin);
-            
-            
-            NSString *userAnswer = [NSString stringWithCString:str encoding:(NSUTF8StringEncoding)];
-            NSCharacterSet *dontWantChar = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-            NSString *trimmedString = [userAnswer stringByTrimmingCharactersInSet:dontWantChar];
-            NSInteger intAnswer = [trimmedString intValue];
-            
-            if ([trimmedString  isEqual: @"quit"]) {
-                NSLog(@"Thank you for playing.");
-                break;
-            }
-                
-            if (intAnswer == newQuestion.answer) {
-                NSLog(@"Right!");
-            } else {
-                NSLog(@"Wrong!");
-            }
+            //Check answer
+                NSInteger intAnswer = [answer intValue];
+                if (intAnswer == newQuestion.answer) {
+                    NSLog(@"Right!");
+                } else {
+                    NSLog(@"Wrong!");
+                }
             
         }
         
