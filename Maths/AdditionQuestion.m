@@ -14,11 +14,11 @@
 {
     self = [super init];
     if (self) {
-        int randomNumber1 = arc4random_uniform(90)+10;
-        int randomNumber2 = arc4random_uniform(90)+10;
-        int answer = randomNumber1 + randomNumber2;
+        long randomNumber1 = arc4random_uniform(90)+10;
+        long randomNumber2 = arc4random_uniform(90)+10;
+        long answer = randomNumber1 + randomNumber2;
         
-        NSString * combinedNumbers = [NSString stringWithFormat:@"%d + %d\n", randomNumber1, randomNumber2];
+        NSString * combinedNumbers = [NSString stringWithFormat:@"%ld + %ld\n", randomNumber1, randomNumber2];
         _question = combinedNumbers;
         _answer = answer;
     }

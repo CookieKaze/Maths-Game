@@ -11,10 +11,9 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-
         
-        int x = 1;
-        while (x == 1) {
+        BOOL quit = NO;
+        while (quit == NO) {
             AdditionQuestion * newQuestion = [[AdditionQuestion alloc] init];
             NSLog(@"%@", newQuestion.question);
             
@@ -25,11 +24,17 @@ int main(int argc, const char * argv[]) {
             char str [255];
             fgets(str, 255, stdin);
             
+            
             NSString *userAnswer = [NSString stringWithCString:str encoding:(NSUTF8StringEncoding)];
             NSCharacterSet *dontWantChar = [NSCharacterSet whitespaceAndNewlineCharacterSet];
             NSString *trimmedString = [userAnswer stringByTrimmingCharactersInSet:dontWantChar];
             NSInteger intAnswer = [trimmedString intValue];
             
+            if ([trimmedString  isEqual: @"quit"]) {
+                NSLog(@"Thank you for playing.");
+                break;
+            }
+                
             if (intAnswer == newQuestion.answer) {
                 NSLog(@"Right!");
             } else {
