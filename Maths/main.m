@@ -15,19 +15,27 @@ int main(int argc, const char * argv[]) {
         
         int x = 1;
         while (x == 1) {
-            printf("What is the answer? \nAnswer: ");
+            AdditionQuestion * newQuestion = [[AdditionQuestion alloc] init];
+            NSLog(@"%@", newQuestion.question);
+            
+            
+            
+            
+            NSLog(@"What is the answer? ");
             char str [255];
             fgets(str, 255, stdin);
             
             NSString *userAnswer = [NSString stringWithCString:str encoding:(NSUTF8StringEncoding)];
             NSCharacterSet *dontWantChar = [NSCharacterSet whitespaceAndNewlineCharacterSet];
             NSString *trimmedString = [userAnswer stringByTrimmingCharactersInSet:dontWantChar];
+            NSInteger intAnswer = [trimmedString intValue];
             
+            if (intAnswer == newQuestion.answer) {
+                NSLog(@"Right!");
+            } else {
+                NSLog(@"Wrong!");
+            }
             
-            AdditionQuestion * newQuestion = [[AdditionQuestion alloc] init];
-            
-            
-            printf("%s", [newQuestion.question UTF8String]);
         }
         
         
