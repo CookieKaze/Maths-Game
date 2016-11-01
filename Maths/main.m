@@ -9,12 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "AdditionQuestion.h"
 #import "InputHandler.h"
+#import "ScoreKeeper.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        //Setup score
+        ScoreKeeper * score = [[ScoreKeeper alloc] init];
         
         BOOL quit = NO;
         while (quit == NO) {
+            
             //Ask the question
                 AdditionQuestion * newQuestion = [[AdditionQuestion alloc] init];
                 NSLog(@"%@", newQuestion.question);
@@ -26,16 +30,19 @@ int main(int argc, const char * argv[]) {
             
             //Quit command
                 if ([answer  isEqual: @"quit"]) {
-                    NSLog(@"Thank you for playing.");
+                    NSLog(@"Thank you for playing. %@", [score getScore]);
                     break;
                 }
             
             //Check answer
                 NSInteger intAnswer = [answer intValue];
-                if (intAnswer == newQuestion.answer) {
+                if (intAnswer == (long)newQuestion.answer) {
+                    score.right = score.right+1;
                     NSLog(@"Right!");
+                    
                 } else {
-                    NSLog(@"Wrong!");
+                    score.wrong = score.wrong+1;
+                    NSLog(@"Wrong! %ld", (long)score.wrong);
                 }
             
         }
