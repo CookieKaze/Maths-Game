@@ -25,7 +25,8 @@
     return self;
 }
 
-- (void) generateQuestion {}
+- (void) generateQuestion {
+}
 
 - (NSInteger) getAnswer {
     self.endTime = [NSDate date];

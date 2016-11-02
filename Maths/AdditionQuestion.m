@@ -20,8 +20,8 @@
 }
 
 - (void) generateQuestion {
-    NSString * question = [NSString stringWithFormat:@"%ld + %ld\n", self.leftValue, self.rightValue];
-    self.question = question;
-    self.answer = self.leftValue + self.rightValue;
+    NSString * question = [NSString stringWithFormat:@"%ld + %ld\n", super.leftValue, super.rightValue];
+    super.question = question;
+    super.answer = super.leftValue + super.rightValue;
 }
 @end

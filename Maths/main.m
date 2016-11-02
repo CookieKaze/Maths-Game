@@ -11,6 +11,7 @@
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -20,13 +21,16 @@ int main(int argc, const char * argv[]) {
         //Instantiate QuesitonManager
         QuestionManager * questionManager = [[QuestionManager alloc] init];
         
+        //Instantiate QuestionFactory
+        QuestionFactory * questionFactory = [[QuestionFactory alloc]init];
+        
         BOOL quit = NO;
         while (quit == NO) {
             
             //Ask the question
-                Question * newQuestion = [[Question alloc] init];
-                [questionManager.questions addObject:newQuestion];
-                NSLog(@"%@", newQuestion.question);
+            Question *question = [questionFactory generateRandomQuestion];
+                [questionManager.questions addObject:question];
+                NSLog(@"%@", question.question);
             
             //Get the answer
                 NSLog(@"What is the answer? ");
@@ -40,7 +44,7 @@ int main(int argc, const char * argv[]) {
                 }
             
             //Check answer
-                NSInteger correctAnswer = [newQuestion getAnswer];
+                NSInteger correctAnswer = [question getAnswer];
                 NSInteger intAnswer = [answer intValue];
                 if (intAnswer == correctAnswer) {
                     score.right = score.right+1;
