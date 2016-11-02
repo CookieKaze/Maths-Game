@@ -10,7 +10,14 @@
 
 @interface AdditionQuestion : NSObject
 
+// Question and Answer
 @property NSString * question;
-@property NSInteger * answer;
+@property NSInteger answer;
+- (NSInteger) getAnswer;
+
+// Time
+@property NSDate * startTime;
+@property NSDate * endTime;
+- (NSTimeInterval) answerTime;
 
 @end

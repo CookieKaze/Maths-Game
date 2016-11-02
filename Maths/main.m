@@ -35,15 +35,19 @@ int main(int argc, const char * argv[]) {
                 }
             
             //Check answer
+                NSInteger correctAnswer = [newQuestion getAnswer];
                 NSInteger intAnswer = [answer intValue];
-                if (intAnswer == (long)newQuestion.answer) {
+                if (intAnswer == correctAnswer) {
                     score.right = score.right+1;
                     NSLog(@"Right!");
                     
                 } else {
                     score.wrong = score.wrong+1;
-                    NSLog(@"Wrong! %ld", (long)score.wrong);
+                    NSLog(@"Wrong!");
                 }
+            
+        
+            //NSLog(@"Time Difference: %.1f", [newQuestion answerTime]);
             
         }
         

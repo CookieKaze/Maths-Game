@@ -14,15 +14,27 @@
 {
     self = [super init];
     if (self) {
+        //Set date
+        _startTime = [NSDate date];
+        
         NSInteger randomNumber1 = arc4random_uniform(90)+10;
         NSInteger randomNumber2 = arc4random_uniform(90)+10;
-        NSInteger answer = randomNumber1 + randomNumber2;
+        _answer = randomNumber1 + randomNumber2;
         
         NSString * combinedNumbers = [NSString stringWithFormat:@"%ld + %ld\n", randomNumber1, randomNumber2];
         _question = combinedNumbers;
-        _answer = answer;
     }
     return self;
+}
+
+- (NSInteger) getAnswer {
+    self.endTime = [NSDate date];
+    return _answer;
+}
+
+- (NSTimeInterval) answerTime {
+    NSTimeInterval timeDifference = [self.endTime timeIntervalSinceDate:self.startTime];
+    return timeDifference;
 }
 
 @end
