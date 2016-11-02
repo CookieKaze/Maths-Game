@@ -16,7 +16,7 @@
     if ((long)_right + (long)_wrong != 0) {
         NSInteger total = (long)_right + (long)_wrong;
         CGFloat percent = ((float)_right/total) * 100;
-        message = [NSString stringWithFormat:@"Your score is: %ld right and %ld wrong ==> %f%%", (long)_right, (long)_wrong, percent];
+        message = [NSString stringWithFormat:@"%ld right and %ld wrong ==> %f%%", (long)_right, (long)_wrong, percent];
     }
     return message;
 }

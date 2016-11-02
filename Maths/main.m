@@ -35,7 +35,7 @@ int main(int argc, const char * argv[]) {
             
             //Quit command
                 if ([answer  isEqual: @"quit"]) {
-                    NSLog(@"Thank you for playing. %@", [score getScore]);
+                    NSLog(@"Thank you for playing.");
                     break;
                 }
             
@@ -51,8 +51,8 @@ int main(int argc, const char * argv[]) {
                     NSLog(@"Wrong!");
                 }
             
-        
-            //NSLog(@"Time Difference: %.1f", [newQuestion answerTime]);
+            NSLog(@"%@", [score getScore]);
+            NSLog(@"%@", [questionManager timeOutput]);
             
         }
         
