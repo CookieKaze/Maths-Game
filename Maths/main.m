@@ -10,17 +10,22 @@
 #import "AdditionQuestion.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
+#import "QuestionManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        //Setup score
+        //Instantiate score
         ScoreKeeper * score = [[ScoreKeeper alloc] init];
+        
+        //Instantiate QuesitonManager
+        QuestionManager * questionManager = [[QuestionManager alloc] init];
         
         BOOL quit = NO;
         while (quit == NO) {
             
             //Ask the question
                 AdditionQuestion * newQuestion = [[AdditionQuestion alloc] init];
+                [questionManager.questions addObject:newQuestion];
                 NSLog(@"%@", newQuestion.question);
             
             //Get the answer

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D5781021DCA39E4006BF880 /* QuestionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5781011DCA39E4006BF880 /* QuestionManager.m */; };
 		1DDCDE8F1DC8ED0900F22750 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCDE8E1DC8ED0900F22750 /* main.m */; };
 		1DDCDE971DC8F34B00F22750 /* AdditionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCDE961DC8F34B00F22750 /* AdditionQuestion.m */; };
 		1DDCDE9A1DC907E500F22750 /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCDE991DC907E500F22750 /* InputHandler.m */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D5781001DCA39E4006BF880 /* QuestionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionManager.h; sourceTree = "<group>"; };
+		1D5781011DCA39E4006BF880 /* QuestionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionManager.m; sourceTree = "<group>"; };
 		1DDCDE8B1DC8ED0900F22750 /* Maths */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Maths; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DDCDE8E1DC8ED0900F22750 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1DDCDE951DC8F34B00F22750 /* AdditionQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdditionQuestion.h; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				1DDCDE8E1DC8ED0900F22750 /* main.m */,
+				1D5781001DCA39E4006BF880 /* QuestionManager.h */,
+				1D5781011DCA39E4006BF880 /* QuestionManager.m */,
 				1DDCDE9E1DC9119900F22750 /* ScoreKeeper.h */,
 				1DDCDE9F1DC9119900F22750 /* ScoreKeeper.m */,
 				1DDCDE981DC907E500F22750 /* InputHandler.h */,
@@ -133,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D5781021DCA39E4006BF880 /* QuestionManager.m in Sources */,
 				1DDCDEA01DC9119900F22750 /* ScoreKeeper.m in Sources */,
 				1DDCDE8F1DC8ED0900F22750 /* main.m in Sources */,
 				1DDCDE9A1DC907E500F22750 /* InputHandler.m in Sources */,

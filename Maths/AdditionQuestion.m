@@ -14,13 +14,15 @@
 {
     self = [super init];
     if (self) {
-        //Set date
+        //Set Date
         _startTime = [NSDate date];
         
+        //Set Answer
         NSInteger randomNumber1 = arc4random_uniform(90)+10;
         NSInteger randomNumber2 = arc4random_uniform(90)+10;
         _answer = randomNumber1 + randomNumber2;
-        
+
+        //Set Question
         NSString * combinedNumbers = [NSString stringWithFormat:@"%ld + %ld\n", randomNumber1, randomNumber2];
         _question = combinedNumbers;
     }
